@@ -19,6 +19,7 @@ requirements:
     - python
     - pip
     - pytest-runner
+    - numpydoc
   run:
     - python
     - h5py >=2.3.1
