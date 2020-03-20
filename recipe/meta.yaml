@@ -20,6 +20,7 @@ requirements:
     - pip
     - pytest-runner
     - numpydoc
+    - sphinx
   run:
     - python
     - h5py >=2.3.1
