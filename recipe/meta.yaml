@@ -12,12 +12,13 @@ source:
 
 build:
   number: 1
-  script: python -m pip install --no-deps --ignore-installed .
+  script: "{{ PYTHON }} -m pip install . -vv"
 
 requirements:
-  build:
+  host:
     - python
     - pip
+    - pytest-runner
   run:
     - python
     - h5py >=2.3.1
