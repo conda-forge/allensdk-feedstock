@@ -7,17 +7,21 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.bz2
   sha256: {{ sha256 }}
 
 build:
-  number: 0
-  script: python -m pip install --no-deps --ignore-installed .
+  number: 1
+  script: "{{ PYTHON }} -m pip install . -vv"
+  skip: true  # [py!=36]
 
 requirements:
-  build:
+  host:
     - python
     - pip
+    - pytest-runner
+    - numpydoc
+    - sphinx
   run:
     - python
     - h5py >=2.3.1
@@ -41,7 +45,7 @@ test:
 
 about:
   home: http://alleninstitute.github.io/AllenSDK/
-  license: BSD
+  license: BSD-3-Clause
   license_family: BSD
   license_file: LICENSE.txt
   summary: 'core libraries for the allensdk.'
