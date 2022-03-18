@@ -1,5 +1,5 @@
 {% set name = "allensdk" %}
-{% set version = "0.14.4" %}
+{% set version = "2.13.2" %}
 {% set sha256 = "73c044fe5320af714d879e2b80e264fff26b30c164bc8134ba09882f7f7cc5f4" %}
 
 package:
@@ -58,3 +58,4 @@ about:
 extra:
   recipe-maintainers:
     - umarbrowser
+    - rly
